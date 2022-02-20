@@ -15,6 +15,6 @@ Get changeset value for specific Unity editor version.
 
 # Use changeset value in later steps 
 - run: |
-    echo '{{ steps.unity-changeset.outputs.changeset }}'
+    echo '${{ steps.unity-changeset.outputs.changeset }}'
     # 48b1aa000234
 ```
