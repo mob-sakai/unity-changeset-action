@@ -12,6 +12,7 @@ async function run() {
     if (!changeset)
       throw Error(`the version '${unityVersion}' is not found.`);
 
+    console.log(changeset.changeset);
     core.setOutput('changeset', changeset.changeset);
   } catch (error) {
     core.setFailed(error.message);
