@@ -1,18 +1,18 @@
 const core = require('@actions/core');
-const wait = require('./wait');
-
+const { getUnityChangeset } = require('unity-changeset');
 
 // most @actions toolkit packages have async methods
 async function run() {
   try {
-    const ms = core.getInput('milliseconds');
-    core.info(`Waiting ${ms} milliseconds ...`);
+    const unityVersion = core.getInput('unityVersion');
+    if (!unityVersion)
+      throw Error(`input 'unityVersion' is empty.`);
 
-    core.debug((new Date()).toTimeString()); // debug is only output if you set the secret `ACTIONS_RUNNER_DEBUG` to true
-    await wait(parseInt(ms));
-    core.info((new Date()).toTimeString());
+    const changeset = await getUnityChangeset(unityVersion);
+    if (!changeset)
+      throw Error(`the version '${unityVersion}' is not found.`);
 
-    core.setOutput('time', new Date().toTimeString());
+    core.setOutput('changeset', changeset.changeset);
   } catch (error) {
     core.setFailed(error.message);
   }

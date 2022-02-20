@@ -1,13 +1,16 @@
-name: 'Wait'
-description: 'Wait a designated number of milliseconds'
+name: "Unity Changeset"
+author: "mob-sakai <sakai861104@gmail.com>"
+description: "Get changeset value for specific Unity editor version."
 inputs:
-  milliseconds:  # id of input
-    description: 'number of milliseconds to wait'
+  unityVersion:
+    description: "The version of Unity editor. For example, 2021.2.12f1"
     required: true
-    default: '1000'
 outputs:
-  time: # output will be available to future steps
-    description: 'The current time after waiting'
+  changeset:
+    description: "The changeset value. For example, 48b1aa000234"
+branding:
+  icon: "box"
+  color: "gray-dark"
 runs:
-  using: 'node12'
-  main: 'dist/index.js'
+  using: "node12"
+  main: "dist/index.js"

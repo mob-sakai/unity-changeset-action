@@ -1,7 +1,7 @@
 {
-  "name": "javascript-action",
+  "name": "unity-changeset-action",
   "version": "1.0.0",
-  "description": "JavaScript Action Template",
+  "description": "Get changeset value for specific Unity editor version.",
   "main": "index.js",
   "scripts": {
     "lint": "eslint .",
@@ -11,25 +11,26 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/actions/javascript-action.git"
+    "url": "git+https://github.com/mob-sakai/unity-changeset-action.git"
   },
   "keywords": [
     "GitHub",
     "Actions",
-    "JavaScript"
+    "Unity"
   ],
-  "author": "",
+  "author": "mob-sakai <sakai861104@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/actions/javascript-action/issues"
+    "url": "https://github.com/mob-sakai/unity-changeset-action/issues"
   },
-  "homepage": "https://github.com/actions/javascript-action#readme",
+  "homepage": "https://github.com/mob-sakai/unity-changeset-action#readme",
   "dependencies": {
-    "@actions/core": "^1.2.5"
+    "@actions/core": "^1.6.0",
+    "unity-changeset": "^1.6.0"
   },
   "devDependencies": {
-    "@vercel/ncc": "^0.31.1",
-    "eslint": "^8.0.0",
-    "jest": "^27.2.5"
+    "@vercel/ncc": "^0.33.3",
+    "eslint": "^8.9.0",
+    "jest": "^27.5.1"
   }
 }
