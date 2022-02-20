@@ -1,25 +1,30 @@
 name: "units-test"
 on:
+  workflow_dispatch:
   pull_request:
   push:
     branches:
       - main
-      - 'releases/*'
+      - "releases/*"
 
 jobs:
   # unit tests
   units:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - run: npm ci
-    - run: npm test
+      - uses: actions/checkout@v2
+      - run: npm ci
+      - run: npm test
 
   # test action works running from the graph
   test:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - uses: ./
-      with:
-        unityVersion: 2021.2.12f1
+      - uses: actions/checkout@v2
+      - uses: ./
+        id: unity-changeset
+        with:
+          unityVersion: 2021.2.12f1
+      - if: steps.unity-changeset.outputs.changeset != '48b1aa000234'
+        run: |
+          echo '::error changeset value is not correct, ${{ steps.unity-changeset.outputs.changeset }}'
