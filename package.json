@@ -25,7 +25,7 @@
   },
   "homepage": "https://github.com/mob-sakai/unity-changeset-action#readme",
   "dependencies": {
-    "@actions/core": "^1.6.0",
+    "@actions/core": "^1.7.0",
     "unity-changeset": "^1.6.0"
   },
   "devDependencies": {
