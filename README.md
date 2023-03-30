@@ -1,6 +1,6 @@
 # [GitHub Action] Unity Changeset
 
-![](https://github.com/mob-sakai/unity-changeset-action/workflows/units-test/badge.svg)
+![](https://github.com/mob-sakai/unity-changeset-action/workflows/test/badge.svg)
 
 Get changeset value for specific Unity editor version.
 
