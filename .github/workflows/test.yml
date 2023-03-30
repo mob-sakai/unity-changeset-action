@@ -1,11 +1,10 @@
-name: "units-test"
+name: "test"
 on:
   workflow_dispatch:
   pull_request:
   push:
     branches:
       - main
-      - "releases/*"
 
 jobs:
   # unit tests
@@ -28,3 +27,14 @@ jobs:
       - if: steps.unity-changeset.outputs.changeset != '48b1aa000234'
         run: |
           echo '::error changeset value is not correct, ${{ steps.unity-changeset.outputs.changeset }}'
+          exit 1
+
+      - uses: ./
+        id: unity-changeset2
+        continue-on-error: true
+        with:
+          unityVersion: 2021.2.12f2
+      - if: steps.unity-changeset2.outcome == 'success'
+        run: |
+          echo '::error changeset value is not correct, ${{ steps.unity-changeset2.outputs.changeset }}'
+          exit 1
