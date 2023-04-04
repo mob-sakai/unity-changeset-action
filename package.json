@@ -26,7 +26,7 @@
   "homepage": "https://github.com/mob-sakai/unity-changeset-action#readme",
   "dependencies": {
     "@actions/core": "^1.10.0",
-    "unity-changeset": "^2.0.2"
+    "unity-changeset": "^2.1.0"
   },
   "devDependencies": {
     "@vercel/ncc": "^0.36.1",
