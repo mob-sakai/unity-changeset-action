@@ -7,7 +7,7 @@ Get changeset value for specific Unity editor version.
 # Usage
 
 ```yaml
-- uses: mob-sakai/unity-changeset@v1
+- uses: mob-sakai/unity-changeset-action@v1
   id: unity-changeset
   with:
     # (Required) The version of Unity editor. For example, 2021.2.12f1
