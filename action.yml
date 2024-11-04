@@ -2,6 +2,10 @@ name: "Unity Changeset"
 author: "mob-sakai <sakai861104@gmail.com>"
 description: "Get changeset value for specific Unity editor version."
 inputs:
+  db:
+    description: "The url to the Unity version database file. (default: https://mob-sakai.github.io/unity-changeset/db)"
+    required: false
+    default: "https://mob-sakai.github.io/unity-changeset/db"
   unityVersion:
     description: "The version of Unity editor. For example, 2021.2.12f1"
     required: true
@@ -12,5 +16,5 @@ branding:
   icon: "box"
   color: "gray-dark"
 runs:
-  using: "node16"
+  using: "node20"
   main: "dist/index.js"
