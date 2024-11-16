@@ -13,5 +13,5 @@ test('get changeset (exist, beta)', async () => {
 }, 10000);
 
 test('get changeset (not exist)', async () => {
-  await expect(getUnityChangeset('2021.2.12f2')).rejects.toThrowError(/^No changeset found for/);
+  await expect(getUnityChangeset('2021.2.12f2')).rejects.toThrowError("The given version '2021.2.12f2' was not found.");
 }, 10000);
